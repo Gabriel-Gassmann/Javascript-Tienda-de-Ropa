@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Ropa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="navContainer">
+                <a class="nav_logo" href="#">FullDeportivaok</a>
+                <ul>
+                    <li><a class="btnVolver" href="./index.html">Seguir Comprando</a></li>
+                    <li><a class="btnCarrito" href="./carrito.html">Carrito</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2 class="tituloIndumentaria">Carrito</h2>
+        <div class="contenedorCarrito">
+            <p id="carritoVacio" class="CarritoVacio"> Tu Carrito esta VACIO</p>
+        <!-- </div> -->
+            <div id="carritoProductos" class="CarritoProductos disabled">
+
+            </div>
+
+            <div id="carritoFinal" class="carritoFinal disabled">
+                <div class="CarritoBorrar">
+                    <button id="CarritoVaciar" class="CarritoVaciar">Vaciar Carrito</button>
+                </div>
+                <div class="CarritoPrecio">
+                    <div class="CarritoTotal">
+                        <p>Total:</p>
+                        <p id="total"></p>
+                    </div>
+                    <button class="CarritoComprar">Comprar</button>
+                </div>
+            </div>
+                <p id="carritoComprado" class="CarritoComprar disabled"> Te esperamos con muchas mas prendas!</p>
+        </div>
+    </main>
+    <footer>
+        <div class="container_footer">
+            <div class="whatsapp">
+                <h2>Whatsapp</h2>
+                    <h3>123456</h3>
+                    <h3>Horario de atencion: Lunes a Sabados de 10hs/20hs</h3>
+            </div>
+            <div class="instagram">
+                <h2>Instagram</h2>
+                    <a href=""target="_blank"> Instagram</a>
+            </div>
+        </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./js/carrito.js"></script>
+</body>
+</html>

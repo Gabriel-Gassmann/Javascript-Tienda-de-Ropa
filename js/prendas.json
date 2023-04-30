@@ -1,0 +1,142 @@
+[
+    {
+        "id": "buzo-01",
+        "titulo":"Buzo Warriors/Cleveland",
+        "imagen": "./imagen/buzos-warriors-cleveland.jpeg",
+        "categoria": {
+            "nombre": "Buzos",
+            "id": "buzos"
+        },
+        "precio": 4500
+    },
+    {
+        "id": "buzo-01",
+        "titulo":"Buzo Blanco Shoes",
+        "imagen": "./imagen/buzo-logo-zapatillas.jpeg",
+        "categoria": {
+            "nombre": "Buzos",
+            "id": "buzos"
+        },
+        "precio": 6000
+    },
+    {
+        "id": "pantalon-01",
+        "titulo":"Jean",
+        "imagen": "./imagen/jean.jpeg",
+        "categoria": {
+            "nombre": "Pantalones",
+            "id": "pantalones"
+        },
+        "precio": 5000
+    },
+    {
+        "id": "pantalon-01",
+        "titulo":"Pantalon",
+        "imagen": "./imagen/pantalon-liso.jpeg",
+        "categoria": {
+            "nombre": "Pantalones",
+            "id": "pantalones"
+        },
+        "precio": 4500
+    },
+    {
+        "id": "pantalon-01",
+        "titulo":"Pantalon Adidas",
+        "imagen": "./imagen/pantalon-adidas.jpeg",
+        "categoria": {
+            "nombre": "Pantalones",
+            "id": "pantalones"
+        },
+        "precio": 4000
+    },
+    {
+        "id": "pantalon-01",
+        "titulo":"Pantalon Adidas Negro",
+        "imagen": "./imagen/pantalon-adidas-2.jpeg",
+        "categoria": {
+            "nombre": "Pantalones",
+            "id": "pantalones"
+        },
+        "precio": 4000
+    },
+    {
+        "id": "Camperas-01",
+        "titulo":"Camperon Nike",
+        "imagen": "./imagen/camperon-nike.jpeg",
+        "categoria": {
+            "nombre": "Camperas",
+            "id": "camperas"
+        },
+        "precio": 6500
+    },
+    {
+        "id": "Camperas-01",
+        "titulo":"Camperon Nike Reversible",
+        "imagen": "./imagen/camperon-nike-2.jpeg",
+        "categoria": {
+            "nombre": "Camperas",
+            "id": "camperas"
+        },
+        "precio": 7500
+    },
+    {
+        "id": "Camperas-01",
+        "titulo":"Camperon Nike",
+        "imagen": "./imagen/camperon-nike-3.jpeg",
+        "categoria": {
+            "nombre": "Camperas",
+            "id": "camperas"
+        },
+        "precio": 7000
+    },
+    {
+        "id": "camisetas-01",
+        "titulo":"Remera Adidas",
+        "imagen":"./imagen/remera-adidas-argentina.jpeg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "camisetas-01",
+        "titulo":"Remera Nike",
+        "imagen":"./imagen/remera-nike-negra.jpeg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio": 3500
+    },
+    {
+        "id": "musculosas-01",
+        "titulo":"Musculosa Seleccion Argentina",
+        "imagen": "./imagen/musculosa-argentina.jpeg",
+        "categoria": {
+            "nombre": "Musculosas",
+            "id": "musculosas"
+        },
+        "precio": 3500
+    },
+        {
+        "id": "musculosas-01",
+        "titulo":"Musculosa CDM Celeste",
+        "imagen": "./imagen/musculosa-cdm-celeste.jpeg",
+        "categoria": {
+            "nombre": "Musculosas",
+            "id": "musculosas"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "musculosas-01",
+        "titulo":"Musculosa CDM Negra",
+        "imagen": "./imagen/musculosa-cdm-negra.jpeg",
+        "categoria": {
+            "nombre": "Musculosas",
+            "id": "musculosas"
+        },
+        "precio": 3000
+    }
+]
