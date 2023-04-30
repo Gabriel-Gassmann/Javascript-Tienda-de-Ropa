@@ -1,10 +1,11 @@
 let prendasEnCarrito = (localStorage.getItem("prendas-en-carrito"));
 prendasEnCarrito = JSON.parse(prendasEnCarrito);
 
-const contCarritoVacio = document.querySelector("#carritoVacio");
-const contCarritoProductos = document.querySelector("#carritoProductos");
-const contCarritoFinal = document.querySelector("#carritoFinal");
-const contCarritoComprado = document.querySelector("#carritoComprado");
+//DOM
+const containerCarritoVacio = document.querySelector("#carritoVacio");
+const containerCarritoProductos = document.querySelector("#carritoProductos");
+const containerCarritoFinal = document.querySelector("#carritoFinal");
+const containerCarritoComprado = document.querySelector("#carritoComprado");
 let botonesEliminar = document.querySelectorAll(".CarritoEliminar");
 const botonVaciar = document.querySelector(".CarritoVaciar");
 const total = document.querySelector("#total");
@@ -12,15 +13,15 @@ const botonComprar = document.querySelector(".CarritoComprar");
 
 function cargarPrendasCarrito(){
 
-    if(prendasEnCarrito && prendasEnCarrito.length > 0) {
+    if(prendasEnCarrito && prendasEnCarrito.length > 0){//para que en el carrito cuando no haya prendas, aparezca en pantalla "el carrito esta vacio" 
+    
+        containerCarritoVacio.classList.add("disabled");
+        containerCarritoProductos.classList.remove("disabled");
+        containerCarritoFinal.classList.remove("disabled");
+        containerCarritoComprado.classList.add("disabled");
 
-        contCarritoVacio.classList.add("disabled");
-        contCarritoProductos.classList.remove("disabled");
-        contCarritoFinal.classList.remove("disabled");
-        contCarritoComprado.classList.add("disabled");
-
-        contCarritoProductos.innerHTML = "";//para vaciar de entrada las prendas
-        //traigo parte del html al js.
+        containerCarritoProductos.innerHTML = "";//vacio el contenedor por si queda guardado algo
+        //creo un div en carrito.html desde js.
         prendasEnCarrito.forEach(prenda => {
 
             const div = document.createElement("div");
@@ -45,13 +46,13 @@ function cargarPrendasCarrito(){
                 </div>
                 <button class="CarritoEliminar" id="${prenda.id}">BORRAR</button>
             `;
-            contCarritoProductos.append(div);
+            containerCarritoProductos.append(div);//agrego un nodo
     })
     } else{
-        contCarritoVacio.classList.remove("disabled");
-        contCarritoProductos.classList.add("disabled");
-        contCarritoFinal.classList.add("disabled");
-        contCarritoComprado.classList.add("disabled");
+        containerCarritoVacio.classList.remove("disabled");
+        containerCarritoProductos.classList.add("disabled");
+        containerCarritoFinal.classList.add("disabled");
+        containerCarritoComprado.classList.add("disabled");
     }
     actualizarBotonesEliminar();
     actualizarTotal();
@@ -65,19 +66,19 @@ function actualizarBotonesEliminar() {
         boton.addEventListener("click", eliminarDelCarrito);
     });
 }
-
+//creo una funcion para borrar del carrito la prenda individualmente.
 function eliminarDelCarrito(e){
     const idBoton = e.currentTarget.id;
     const index = prendasEnCarrito.findIndex(prenda => prenda.id === idBoton);
 
-    prendasEnCarrito.splice(index, 1);
+    prendasEnCarrito.splice(index, 1);//para que se borren del index, y solo 1 prenda
     cargarPrendasCarrito();
-    localStorage.setItem("prendas-en-carrito", JSON.stringify (prendasEnCarrito));
+    localStorage.setItem("prendas-en-carrito", JSON.stringify (prendasEnCarrito));// para borrarlos del local storage
 }
 
 botonVaciar.addEventListener("click", vaciarCarrito);
 function vaciarCarrito(){
-    
+    //Libreria de SweetAlert2 con un cartel de (si/no) para asegurar de si quieren o no vaciar por completo el carrito.
     Swal.fire({
         title: '¿Estas Segurx?',
         icon: 'question',
@@ -86,7 +87,7 @@ function vaciarCarrito(){
         focusConfirm: false,
         confirmButtonText: 'Si.',
         cancelButtonText: 'No.',
-        }).then((result) => {
+        }).then((result) => { //utilize parte de otro sweetalert asi si confirma que quieren vaciar el carrito, que se vacie.
             if (result.isConfirmed) {
                 prendasEnCarrito.length = 0;//vaciamos el carrito
                 localStorage.setItem("prendas-en-carrito", JSON.stringify(prendasEnCarrito));
@@ -104,7 +105,7 @@ function actualizarTotal (){
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito(){
-
+    //Libreria de SweetAlert2 para que salga un cartel al finalizar la compra.
     Swal.fire(
         'Muchas Gracias por tu compra!',
         'Espero que Disfrutes tu prenda.',
@@ -112,8 +113,9 @@ function comprarCarrito(){
     
     prendasEnCarrito.length = 0;
     localStorage.setItem("prendas-en-carrito", JSON.stringify(prendasEnCarrito));
-    contCarritoVacio.classList.add("disabled");
-    contCarritoProductos.classList.add("disabled");
-    contCarritoFinal.classList.add("disabled");
-    contCarritoComprado.classList.remove("disabled");
+    //reutilizo parte del html para mostrar en pantalla un texto aparte.
+    containerCarritoVacio.classList.add("disabled");
+    containerCarritoProductos.classList.add("disabled");
+    containerCarritoFinal.classList.add("disabled");
+    containerCarritoComprado.classList.remove("disabled");
 }
